@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lp-dim-app-ld-c04ef": {
+      "hosting": {
+        "iut-app": [
+          "lp-dim-app-ld-c04ef"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lp-dim-app-ld-c04ef"
+  }
+}

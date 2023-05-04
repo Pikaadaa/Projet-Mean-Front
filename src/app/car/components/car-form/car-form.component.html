@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+<form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+    <div class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>identifiant</mat-label>
+            <input matInput formControlName="id" readonly />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Marque</mat-label>
+            <input matInput formControlName="brand" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nationnalité</mat-label>
+            <input matInput formControlName="nationality" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Date de création</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateOfCreation">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" mat-dialog-close>Annuler</button>
+        <button mat-raised-button type="submit" cdkFocusInitial color="warn"
+            [disabled]="!carForm.valid || !carForm.dirty">{{submitBtnName}}</button>
+    </mat-dialog-actions>
+</form>
